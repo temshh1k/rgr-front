@@ -1,0 +1,14 @@
+.header{
+    grid-area: h;
+    background-color: cornsilk;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.categories{
+    display: flex;
+    flex-direction: row;
+}
+.item{
+    padding-right: 10px;
+}

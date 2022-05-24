@@ -1,0 +1,30 @@
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.img{
+    width: 150px;
+    height: 150px;
+}
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.mainImage{
+    width: 350px;
+    height: 450px;
+}
+.images{
+    width: 150px;
+    height: 150px;
+}
+.imageContainer{
+    display: flex;
+}
+
+.imagesSecondCont{
+    display: flex;
+    flex-direction: column;
+    background-color: indigo;
+}
