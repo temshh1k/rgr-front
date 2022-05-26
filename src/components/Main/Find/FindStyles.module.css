@@ -1,0 +1,86 @@
+.findPane {
+    height: 1000px;
+    width: 100%;
+    background: lightgoldenrodyellow;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productOnPane {
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+    width: 200px;
+    background: #a9a98c;
+}
+
+.paginatrion {
+    background: #c0c0ad;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.current {
+    border-bottom: 3px solid black;
+}
+
+.inputer {
+    display: flex;
+    background: gray;
+    justify-content: center;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+}
+
+.inputut {
+    outline: none;
+    text-decoration: none;
+    width: 170px;
+    font-size: 20px;
+    height: 30px;
+    border-radius: 5px;
+
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.findBotPane {
+    font-size: 20px;
+    width: 100%;
+    height: 800px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: lightgoldenrodyellow;
+}
+
+.actualProducts{
+    width: 90%;
+    height: 700px;
+    background: #ceceb1;
+}
+
+.res{
+
+    display: flex;
+    justify-content: center;
+    background: #c0c0ad;
+    font-size: 23px;
+}
+
+.contProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

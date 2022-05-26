@@ -3,7 +3,7 @@
     background-color: cornsilk;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+        justify-content: space-evenly;
 }
 .categories{
     display: flex;
@@ -11,4 +11,13 @@
 }
 .item{
     padding-right: 10px;
+}
+
+.profile{
+    background: #7c7c62;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

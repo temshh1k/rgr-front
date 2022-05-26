@@ -14,7 +14,6 @@ class ProductListContainer extends React.Component{
 
     }
     render() {
-
         return <div>
             {this.props.categories.map(e=><div>
                   <ProductList categories={e}
