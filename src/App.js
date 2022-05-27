@@ -13,6 +13,10 @@ import AddProduct from "./components/Main/Profile/AddProduct`";
 import Basket from "./components/Main/Profile/BasketComponent";
 import Store from "./components/Main/Store/Store";
 import Category from "./components/Main/Find/Category";
+import Admin from "./components/Main/Profile/Admin";
+import BuyHistory from "./components/Main/Profile/BuyHistory";
+import Sellhistory from "./components/Main/Profile/Sellhistory";
+import AwaitList from "./components/Main/Profile/AwaitList";
 
 export function App() {
 
@@ -38,7 +42,11 @@ export function App() {
                             element={<ProductPage />}/>
                      <Route path='/find' element={<FindComponent/>}/>
                      <Route path='/store' element={<Store/>}/>
-                     <Route path='/category/:name' element={<Category/>}/>
+                     <Route path='/category' element={<Category/>}/>
+                     <Route path='/admin' element={<Admin/>}/>
+                     <Route path='/buyhistory' element={<BuyHistory/>}/>
+                     <Route path='/sellhistory' element={<Sellhistory/>}/>
+                     <Route path='/awaitings' element={<AwaitList/>}/>
 
 
                  </Routes>

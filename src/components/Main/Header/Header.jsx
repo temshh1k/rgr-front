@@ -11,7 +11,6 @@ const Header = (props) =>{
 
     let[userData, setUserData] = useState(null)
 
-    let [cats, setCats] = useState({cat:[]})
 
     useEffect( ()=>{
         const fetchData = async () => {
@@ -19,11 +18,7 @@ const Header = (props) =>{
                 return data.data
                 }
             );
-            const catsResp = await axios.get("http://localhost:8080/api/products/get/categories", {withCredentials:true}).then(data=>{
-                return data.data.splice(0, 3);
-            })
-            console.log(catsResp)
-            setCats({cat: catsResp})
+
             setUserData(result)
             setFetch(false)
         };
@@ -35,11 +30,9 @@ const Header = (props) =>{
     return(
         <header className={s.header}>
             <div className={s.categories}>
-                {fetch ? "Loading..." : cats.cat.map(e=>
-                    <NavLink to={`/category/${e.name}`}>
-                    <div className={s.item}>{e.name}</div>
+                    <NavLink to={`/category`}>
+                    <div className={s.item}>Категории</div>
                     </NavLink>
-                )}
             </div>
             <div>
                 <NavLink to={'/find'}>Поиск</NavLink>

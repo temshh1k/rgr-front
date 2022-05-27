@@ -38,7 +38,7 @@ const Store = (props) =>{
         const fetchingData = async () => {
 
             const result = await axios.get("http://localhost:8080/api/products/get/store", {withCredentials: true}).then(data => {
-
+             
                     return data.data
                 }
             )

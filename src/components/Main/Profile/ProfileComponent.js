@@ -5,25 +5,21 @@ import {NavLink} from "react-router-dom";
 
 const Profile = (props) => {
 
+    let [fetching, setFetching] = useState(true);
 
     let [userProfile, setUserProfile] = useState('');
 
     let [isSalesman, setIsSalesman] = useState(false);
+    let [admin, setAdmin] = useState(false);
 
-    let [fetching, setFetching] = useState(true);
+
 
     let [balance, setBalance] = useState(()=>{
         return{
             money: null,
         }
     });
-    let [history, setHistory] = useState(()=>{
-        return{
-           historys: []
-        }
 
-
-    })
 
     let [userInfo, setUserInfo] = useState(()=>{
         return{
@@ -48,6 +44,9 @@ const Profile = (props) => {
                 if(e==="ROLE_SALESMAN"){
                     setIsSalesman(true)
                 }
+                if(e==="ROLE_ADMIN"){
+                    setAdmin(true)
+                }
             })
             setFetching(false)
 
@@ -56,24 +55,7 @@ const Profile = (props) => {
         fetchingData();
 
     }, [])
-    useEffect(()=>{
 
-        const fetchingBuyHistory = async () =>{
-            const resultHistory = await axios.get("http://localhost:8080/api/profile/buyHistory", {withCredentials: true}).then(data => {
-                    return data.data
-                }
-            );
-
-            setHistory({
-                ...history,
-                historys: resultHistory.buys
-            }
-            )
-            console.log(history)
-            setFetching(false)
-        }
-        fetchingBuyHistory();
-    }, [])
     const balanceAdd =  () =>{
 
         axios.post('http://localhost:8080/api/profile/balance/add',{
@@ -125,7 +107,7 @@ const Profile = (props) => {
                                 Basket + {userProfile.id}
                         </div>
                     </NavLink>
-                    {isSalesman ?<NavLink to={'/myproducts'}>
+                    {isSalesman ?<NavLink to={'/store'}>
                         <div className={s.tab}>
                             My Products
                         </div>
@@ -133,6 +115,26 @@ const Profile = (props) => {
                     {isSalesman ?<NavLink to={'/addproduct'}>
                         <div className={s.tab}>
                             Add product
+                        </div>
+                    </NavLink> : null}
+                    {isSalesman ?<NavLink to={'/sellhistory'}>
+                        <div className={s.tab}>
+                            Sell History
+                        </div>
+                    </NavLink> : null}
+                    <NavLink to={'/awaitings'}>
+                        <div className={s.tab}>
+                           Await list
+                        </div>
+                    </NavLink>
+                    <NavLink to={'/buyhistory'}>
+                        <div className={s.tab}>
+                           Buy history
+                        </div>
+                    </NavLink>
+                    {admin ?<NavLink to={'/admin'}>
+                        <div className={s.tab}>
+                           Admin Panel
                         </div>
                     </NavLink> : null}
                 </div>}
@@ -173,10 +175,8 @@ const Profile = (props) => {
                         Изменить Индекс: <input  name='index' value={userInfo.index} onChange={changeInputRegisterInfo}/>
                     </div>
                     <input type='submit'/>
-                    <div className={s.sells}>
-                        История покупок:
-                        {history.historys.map(e=><div>{e.products.map(p=><div>{p.name}</div>)}</div>)}
-                    </div>
+
+
                 </form>
             </div>
         </div>

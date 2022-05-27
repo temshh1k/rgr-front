@@ -50,3 +50,18 @@
     flex-direction: column;
     justify-content: right;
 }
+.sells{
+    display: flex;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+
+    justify-content: space-evenly;
+    align-self: stretch;
+}
+.product{
+    display: flex;
+    flex-direction: row;
+}
+
