@@ -8,8 +8,8 @@ export const productAPI={
     getMainProducts: () =>{
         return instance.get('products/main')
     },
-    addReview: (id)=>{
-        return instance.post('products/review/add/' + id)
+    addReview : (id, review)=>{
+        return instance.post('products/review/add/5',  review, {withCredentials: true});
     },
     deleteReview: (id)=>{
         return instance.post('products/review/delete/' + id)

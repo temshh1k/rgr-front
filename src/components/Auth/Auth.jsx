@@ -36,11 +36,11 @@ const DOMEN_SITE='aboba.com';
             axios.post(DOMEN_SERVER + 'auth/login',{
                 email: register.email,
                 password: register.password,
-            } ).then(response =>{
+            }, {withCredentials: true}).then(response =>{
                 if(response.data === true){
                     window.location.href = DOMEN_SITE
                 }else{
-                    console.log(Cookies.get('access_token'));
+                    console.log("POSHEL")
                 }
 
             }).catch(()=>{

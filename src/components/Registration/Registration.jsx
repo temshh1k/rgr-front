@@ -51,10 +51,16 @@ function Registration() {
             alert('pass kal')
         }else {
             let newRoles = ['user'];
-            let check = document.getElementById('roles');
+            let check = document.getElementById('salesman');
+            let checkAdmin = document.getElementById('admin');
+
             if (check.checked){
                 newRoles.push('salesman');
             }
+            if (checkAdmin.checked){
+                newRoles.push('admin');
+            }
+
             console.log(newRoles)
             axios.post(DOMEN_SERVER + 'auth/reg',{
                 email: register.email,
@@ -93,7 +99,9 @@ function Registration() {
                     Выберите тип пользователя
                     <div>
                         <label >Продавец</label>
-                       <input  type='radio' id='roles' name='roles' value={register.roles} onChange={changeInputRegister}/>
+                       <input  type='radio' id='salesman' name='salesman' value={register.roles} onChange={changeInputRegister}/>
+                        <label >Админ</label>
+                        <input  type='radio' id='admin' name='admin' value={register.roles} onChange={changeInputRegister}/>
 
                     </div>
                 </p>

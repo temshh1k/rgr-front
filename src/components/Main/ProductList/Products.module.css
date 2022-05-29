@@ -28,3 +28,22 @@
     flex-direction: column;
     background-color: indigo;
 }
+.reviews{
+    overflow: scroll;
+    background: green;
+    width: 300px;
+    height: 400px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rev{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: greenyellow;
+    height: 80px;
+    width: 280px;
+    margin: 5px 5px 0 5px;
+}
